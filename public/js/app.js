@@ -9,7 +9,8 @@ weatherForm.addEventListener('submit', (e) => {
     document.querySelector('#message-2').textContent = '';
 
 
-    fetch('http://localhost:3000/weather?address=' + document.querySelector('input').value).then((response) => {
+    //fetch('http://localhost:3000/weather?address=' + document.querySelector('input').value).then((response) => {
+        fetch('/weather?address=' + document.querySelector('input').value).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 document.querySelector('#message-1').textContent = data.error;
